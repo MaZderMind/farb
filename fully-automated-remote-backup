@@ -1,0 +1,28 @@
+-find disk
+-fix perms
+-update vmdk
+-lounch vm
+
+--- in vm
+
+-wait for disk
+-open luks
+-mount volume
+-start vpn
+-wait for remote-host
+-ssh remote-host
+
+--- on remote
+
+-test reverse-connection
+-unmount disks if mounted
+-mount disks
+-start restic
+-unmount disks
+
+--- in vm
+
+-close vpn
+-unmount volume
+-close luks
+-poweroff (or notify of possibility)
